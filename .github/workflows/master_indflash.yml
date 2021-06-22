@@ -23,10 +23,11 @@ jobs:
         python-version: '3.8'
 
     - name: Create and start virtual environment
+      working-directory: ./WebApps/Python/flask/hello-world-azure-app-service/
       run: |
         python -m venv venv
         source venv/bin/activate
-      working-directory: ./WebApps/Python/flask/hello-world-azure-app-service/
+      
 
     - name: Install dependencies
       run: pip install -r requirements.txt
