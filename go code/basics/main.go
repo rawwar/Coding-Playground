@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"os"
 	"path"
 )
 
@@ -26,4 +27,23 @@ func main() {
 	var file1 string
 	_, file1 = path.Split("/usr/home/kalyan/file2.txt")
 	fmt.Println("File name:", file1)
+
+	// Another way
+	_, file2 := path.Split("/usr/home/kalyan/file23.txt")
+	fmt.Println("File name is :", file2)
+
+	// Go read about Shadowing
+
+	// type conversions
+	speed := 100
+	force := 2.5
+
+	// We can't do speed = speed * force
+
+	speed = int(float64(speed) * force)
+	fmt.Println("Speed * force = ", speed)
+
+	fmt.Printf("%#v\n", os.Args)
+	numOfArgs := len(os.Args)
+	fmt.Println("Number of cmd args=", numOfArgs)
 }
