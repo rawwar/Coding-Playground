@@ -1,1 +1,0 @@
-# All Python codes from Hacker Rank websites

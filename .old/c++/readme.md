@@ -1,1 +1,0 @@
-# All C++ codes from various competetive coding websites and books

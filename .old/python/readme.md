@@ -1,1 +1,0 @@
-# All python codes from various competetive coding websites
