@@ -46,4 +46,16 @@ func main() {
 	fmt.Printf("%#v\n", os.Args)
 	numOfArgs := len(os.Args)
 	fmt.Println("Number of cmd args=", numOfArgs)
+
+	const (
+		monday = iota
+		tuesday
+		wednesday
+		thursday
+		friday
+		saturday
+		sunday
+	)
+	fmt.Println(monday, tuesday, wednesday, thursday, friday, saturday, sunday)
+
 }
