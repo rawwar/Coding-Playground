@@ -24,6 +24,17 @@ Note: When you create new lock objects to synchronize in the code, you will be r
 
 Note-2: If you are writing a C library to be imported in python. Then, you need to take care of acquiring and releasing the GIL. Else, code keeps executing till holding the GIL till its completes the C library call.
 
+**Question**: Is GIL required?
+**Answer**: Yes, Cpython interpreter isn't thread safe. Hence, will cause race conditions.
+
+**Question**: When to use threads?
+**Answer**: Best if you have lot of I/O tasks. Also, consider when calling methods in few packages like numpy where they release GIL in their C code.
+
+**Question**: When not to use threads:
+**Answer**: When you have CPU intensive tasks
+
+
+
 
 #### threading module in Python
 
