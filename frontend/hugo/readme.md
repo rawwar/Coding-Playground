@@ -1,0 +1,1 @@
+Need to run `npm run watch` or `npm run build`  before running `hugo server`. Otherwise, styles.css won't be updated
