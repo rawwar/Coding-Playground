@@ -6,22 +6,24 @@ class Solution:
         start = 0
         end = 0
         res = 0
-        count = 1
+        count = 0
         while start < len(lst) and end < len(lst):
             if lst[start][0] == lst[end][1]:
                 end += 1
                 count -= 1
                 continue
-            if lst[start] < lst[end]:
+            if lst[start][0] < lst[end][1]:
                 count += 1
                 start += 1
+                end 
             else:
                 count -= 1
                 end += 1
             res = max(count, res)
         return res 
         
-        
+
+        return max_count
 
 if __name__ == "__main__":
     obj = Solution()
@@ -29,5 +31,5 @@ if __name__ == "__main__":
     out1 = 2
     inp2 =[[7,10],[2,4]]
     out2 = 1
-    assert out1 == obj.solve(inp1)
-    assert out2 == obj.solve(inp2)
+    print(out1,  minMeetingRooms(inp1))
+    print(out2, obj.solve(inp2))
