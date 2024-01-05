@@ -45,11 +45,25 @@ class DirectedGraphUsingList:
         self.graph = defaultdict(list)
     
     def add_edge(self, start, end):
-        self.graph[start] = end
+        self.graph[start].append(end)
     
     def display(self):
         for vertex in self.graph:
             print(f"Vertex {vertex}: {self.graph[vertex]}")
+
+class WeightedDirectedGraphUsingList:
+    def __init__(self):
+        self.graph = defaultdict(list)
+    
+    def add_edge(self, start, end, weight):
+        self.graph[start].append((end, weight))
+        
+    
+    def display(self):
+        for vertex in self.graph:
+            print(f"Vertex {vertex}: {self.graph[vertex]}")
+
+
 
 
 
