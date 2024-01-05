@@ -26,6 +26,31 @@ class UndirectedGraphUsingAdjacencyList:
         for vertex in self.graph:
             print(f"{vertex}: {self.graph[vertex]}")
 
+class DirectedGraphsUsingmatrix:
+    def __init__(self, num_vertices):
+        self.num_vertices = num_vertices
+        self.matrix = [[0]*num_vertices for _ in range(num_vertices)]
+    
+
+    def add_edge(self, start, end):
+        self.matrix[start][end] = 1
+    
+    def display(self):
+        for row in self.matrix:
+            print(row)
+
+
+class DirectedGraphUsingList:
+    def __init__(self):
+        self.graph = defaultdict(list)
+    
+    def add_edge(self, start, end):
+        self.graph[start] = end
+    
+    def display(self):
+        for vertex in self.graph:
+            print(f"Vertex {vertex}: {self.graph[vertex]}")
+
 
 
 
