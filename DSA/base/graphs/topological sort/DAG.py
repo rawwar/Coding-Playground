@@ -1,17 +1,29 @@
-class DAG:
+from collections import defaultdict
+class Graph:
   def __init__(self):
-    self.graph = []
+    self.graph = defaultdict
+  
+  def add_edge(self, u, v):
+    self.graph[u].append(v)
 
-  def add_vertex(self, vertex):
-    if vertex not in self.graph:
-      self.graph[vertex] = []
-
-  def add_edge(self, start, end):
-    if start in self.graph and end in self.graph:
-      if self.is_cyclic_util(start, end, set()):
-        print("Adding edge will create a cycle. Operation aborted.")
-      else:
-        self.graph[start].append(end)
-    else:
-      print("vertex not found in the graph")
+def topological_sort(graph):
+  result = []
+  visited = set()
+  visited_in_current_dfs = set()
+  
+  def dfs(vertex):
+    if vertex in visited_in_current_dfs:
+      raise ValueError("Graph is cyclic")
+    visited_in_current_dfs.add(vertex)
     
+    for neighbor in graph[vertex]:
+      if neighbor not in visited:
+        dfs(neighbor)
+    visited_in_current_dfs.remove(vertex)
+    visited.add(vertex)
+    result.insert(0, vertex)
+  
+  for vertex in graph:
+    if vertex not in visited:
+      dfs(vertex)
+  return result
