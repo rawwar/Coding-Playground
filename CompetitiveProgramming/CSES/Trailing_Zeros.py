@@ -1,3 +1,10 @@
 n = int(input())
 
-print(n//5)
+count = 0
+
+while n >=5:
+    res = n // 5
+    count += res
+    n = n//5
+print(count)
+    
